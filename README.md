@@ -3,7 +3,9 @@
 
 The scoope of this Test is to perfom some UI Automation flows in the https://www.saucedemo.com website.
 
-The tests were implemented in Cypress using Typescript and Cucumber as a BDD.
+The tests were implemented in **Cypress using Typescript and Cucumber as a BDD.**
+
+The tests made focus on regression testing in all the pages of the website and also come complete end to end workflows.
 
 Steps to run the project
   
