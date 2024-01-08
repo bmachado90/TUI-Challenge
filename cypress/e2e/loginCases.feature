@@ -93,5 +93,32 @@ Feature: Login to a website
 
         Then The Login should fail
 
+    Scenario: Failed user due to incorrect fields.
+
+        When I enter my username "bruno test" and password 
+
+        And I click the login button
+
+        Then The Login should fail
+
+        When I enter only the username "standard_user" but no password
+
+        And I click the login button
+
+        Then The Login should fail
+
+        When I enter my username " " and password 
+
+        And I click the login button
+
+        Then The Login should fail
+
+        When I don´t enter any fields
+
+        And I click the login button
+
+        Then The Login should fail
+
+
 
      

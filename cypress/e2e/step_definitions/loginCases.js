@@ -11,6 +11,8 @@ Given("I go to the website", ()=> {
 
     When("I enter my username {string} and password", (username) => {
     cy.fixture('users').then((data)=>{
+        cy.get("input[placeholder='Username']").clear();
+        cy.get("input[placeholder='Password']").clear();
         cy.get("input[placeholder='Username']").type(username);
         cy.get("input[placeholder='Password']").type(data.password);
     });
@@ -19,6 +21,8 @@ Given("I go to the website", ()=> {
 
       When("I enter my username {string} and an invalid password", (username) => {
     cy.fixture('users').then((data)=>{
+        cy.get("input[placeholder='Username']").clear();
+        cy.get("input[placeholder='Password']").clear();
         cy.get("input[placeholder='Username']").type(username);
         cy.get("input[placeholder='Password']").type(data.failed_password);
     });
@@ -46,7 +50,24 @@ Given("I go to the website", ()=> {
     var t;
     cy.get("h3[data-test='error']").should(($t) => {
       t = $t.text();
-      expect(t).contains(" Username and password do not match any user in this service");
+      expect(t).contains("Epic sadface:");
     });
+  });
+
+    Then("I enter only the username {string} but no password", (username) => {
+    cy.fixture('users').then((data)=>{
+      cy.get("input[placeholder='Username']").clear();
+      cy.get("input[placeholder='Password']").clear();
+      cy.get("input[placeholder='Username']").type(username);
+  });
+  cy.wait(500);
+  });
+
+    Then("I don´t enter any fields", (name) => {
+    cy.fixture('users').then((data)=>{
+      cy.get("input[placeholder='Username']").clear();
+      cy.get("input[placeholder='Password']").clear();
+  });
+  cy.wait(500);
   });
  
