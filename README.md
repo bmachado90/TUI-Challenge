@@ -1,7 +1,7 @@
 # TUI-Challenge
  Tui QA Recruitment Test
 
-The scoope of this Test is to perfom some UI Automation flows in the https://www.saucedemo.com website.
+The scope of this Test is to perform some UI Automation flows in the https://www.saucedemo.com website.
 
 The tests were implemented in **Cypress using Typescript and Cucumber as a BDD.**
 
