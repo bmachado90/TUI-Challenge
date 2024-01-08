@@ -29,7 +29,7 @@ Steps to run the project
      
           npx cypress run --browser chrome --headed
 
-     Run every test without telling any browser (cypress will run the electron browser by default)
+     Run every test without choosing any browser (cypress will run the electron browser by default)
 
           npx cypress run
  
