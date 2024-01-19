@@ -12,10 +12,10 @@ import {Then} from "cypress-cucumber-preprocessor/steps";
 
   Then("The page have a {string} button", (name1) => {
     cy.get("#back-to-products").should("be.visible");
-    var b;
-    cy.get("#back-to-products").should(($b) => {
-        b = $b.text();
-        expect(b).contains(name1);
+    var buttonName;
+    cy.get("#back-to-products").should(($buttonName) => {
+        buttonName = $buttonName.text();
+        expect(buttonName).contains(name1);
     });
 });
 

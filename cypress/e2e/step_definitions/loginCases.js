@@ -36,18 +36,18 @@ Given("I go to the website", ()=> {
   });
 
     Then("The login failed", () => {
-    var t;
-    cy.get("h3[data-test='error']").should(($t) => {
-      t = $t.text();
-      expect(t).contains("Sorry, this user has been locked out.");
+    var errorSetence;
+    cy.get("h3[data-test='error']").should(($errorSetence) => {
+      errorSetence = $errorSetence.text();
+      expect(errorSetence).contains("Sorry, this user has been locked out.");
     });
   });
 
     Then("The Login should fail", () => {
-    var t;
-    cy.get("h3[data-test='error']").should(($t) => {
-      t = $t.text();
-      expect(t).contains("Epic sadface:");
+    var error;
+    cy.get("h3[data-test='error']").should(($error) => {
+      error = $error.text();
+      expect(error).contains("Epic sadface:");
     });
   });
 

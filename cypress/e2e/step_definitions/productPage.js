@@ -1,78 +1,77 @@
 import {Then} from "cypress-cucumber-preprocessor/steps";
 
   Then("I can see several Products", () => {
-    cy.get('.inventory_item').should('have.length','6');
+    cy.get(".inventory_item").should("have.length","6");
 });
 
   Then("The products have Name", () => {
-    cy.get('.inventory_item_name').should('have.length','6');
+    cy.get(".inventory_item_name").should("have.length","6");
     var genArr = Array.from({length:6},(v,k)=>k+1);
     cy.wrap(genArr).each((index) => {
     cy.get("#inventory_container > div > div:nth-child("+index+") > div.inventory_item_description > div.inventory_item_label > a > div")
-        .should('not.be.empty');
+        .should("not.be.empty");
     })
 });
 
   Then("The products have description", () => {
-    cy.get('.inventory_item_desc').should('have.length','6');
+    cy.get(".inventory_item_desc").should("have.length","6");
     var genArr = Array.from({length:6},(v,k)=>k+1);
     cy.wrap(genArr).each((index) => {
     cy.get("#inventory_container > div > div:nth-child("+index+") > div.inventory_item_description > div.pricebar > div")
-        .should('not.be.empty');
+        .should("not.be.empty");
     })
 });
 
   Then("The products have button {string}", (name) => {
-    cy.get('#add-to-cart-sauce-labs-backpack').should('have.length','1');
-    var t;
-    cy.get("#add-to-cart-sauce-labs-backpack").should(($t) => {
-        t = $t.text();
-        expect(t).contains(name);
+    cy.get("#add-to-cart-sauce-labs-backpack").should("have.length","1");
+    var button1;
+    cy.get("#add-to-cart-sauce-labs-backpack").should(($button1) => {
+        button1 = $button1.text();
+        expect(button1).contains(name);
     })
 
-    cy.get('#add-to-cart-sauce-labs-bike-light').should('have.length','1');
-    var t2;
-    cy.get("#add-to-cart-sauce-labs-bike-light").should(($t2) => {
-        t2 = $t2.text();
-        expect(t2).contains(name);
+    cy.get("#add-to-cart-sauce-labs-bike-light").should("have.length","1");
+    var button2;
+    cy.get("#add-to-cart-sauce-labs-bike-light").should(($button2) => {
+        button2 = $button2.text();
+        expect(button2).contains(name);
     })
 
-    cy.get('#add-to-cart-sauce-labs-bolt-t-shirt').should('have.length','1');
-    var t3;
-    cy.get("#add-to-cart-sauce-labs-bolt-t-shirt").should(($t3) => {
-        t3 = $t3.text();
-        expect(t3).contains(name);
+    cy.get("#add-to-cart-sauce-labs-bolt-t-shirt").should("have.length","1");
+    var button3;
+    cy.get("#add-to-cart-sauce-labs-bolt-t-shirt").should(($button3) => {
+        button3 = $button3.text();
+        expect(button3).contains(name);
     })
 
-    cy.get('#add-to-cart-sauce-labs-fleece-jacket').should('have.length','1');
-    var t4;
-    cy.get("#add-to-cart-sauce-labs-fleece-jacket").should(($t4) => {
-        t4 = $t4.text();
-        expect(t4).contains(name);
+    cy.get("#add-to-cart-sauce-labs-fleece-jacket").should("have.length","1");
+    var button4;
+    cy.get("#add-to-cart-sauce-labs-fleece-jacket").should(($button4) => {
+        button4 = $button4.text();
+        expect(button4).contains(name);
     })
 
-    cy.get('#add-to-cart-sauce-labs-onesie').should('have.length','1');
-    var t5;
-    cy.get("#add-to-cart-sauce-labs-onesie").should(($t5) => {
-        t5 = $t5.text();
-        expect(t5).contains(name);
+    cy.get("#add-to-cart-sauce-labs-onesie").should("have.length","1");
+    var button5;
+    cy.get("#add-to-cart-sauce-labs-onesie").should(($button5) => {
+        button5 = $button5.text();
+        expect(button5).contains(name);
     })
 
-    cy.get('#inventory_container > div > div:nth-child(6) > div.inventory_item_description > div.pricebar > button').should('have.length','1');
-    var t6;
-    cy.get("#inventory_container > div > div:nth-child(6) > div.inventory_item_description > div.pricebar > button").should(($t6) => {
-        t6 = $t6.text();
-        expect(t5).contains(name);
+    cy.get("#inventory_container > div > div:nth-child(6) > div.inventory_item_description > div.pricebar > button").should("have.length","1");
+    var button6;
+    cy.get("#inventory_container > div > div:nth-child(6) > div.inventory_item_description > div.pricebar > button").should(($button6) => {
+        button6 = $button6.text();
+        expect(button6).contains(name);
     })
 });
 
   Then("The products have price", () => {
-    cy.get('.inventory_item_price').should('have.length','6');
+    cy.get(".inventory_item_price").should("have.length","6");
     var genArr = Array.from({length:6},(v,k)=>k+1);
-    var t;
     cy.wrap(genArr).each((index) => {
     cy.get("#inventory_container > div > div:nth-child("+index+") > div.inventory_item_description > div.inventory_item_label > div")
-        .should('not.be.empty');
+        .should("not.be.empty");
     })
 });
 
@@ -93,15 +92,15 @@ import {Then} from "cypress-cucumber-preprocessor/steps";
 });
 
   Then("The cart displays {string} for the product added", (value) => {
-    cy.get(".shopping_cart_badge").should('have.length','1');
+    cy.get(".shopping_cart_badge").should("have.length","1");
 });
 
   Then("And the product have {string} button", (name) => {
     cy.get("#remove-sauce-labs-backpack").should("be.visible");
-    var a;
-    cy.get("#remove-sauce-labs-backpack").should(($a) => {
-        a = $a.text();
-        expect(a).contains(name);
+    var productName;
+    cy.get("#remove-sauce-labs-backpack").should(($productName) => {
+        productName = $productName.text();
+        expect(productName).contains(name);
     });
 });
 
@@ -110,7 +109,7 @@ import {Then} from "cypress-cucumber-preprocessor/steps";
 });
 
   Then("The cart is empty", (value) => {
-    cy.get(".shopping_cart_badge").should('not.exist');
+    cy.get(".shopping_cart_badge").should("not.exist");
 });
 
   Then("I select another product to the cart", () => {
@@ -127,18 +126,18 @@ import {Then} from "cypress-cucumber-preprocessor/steps";
 
   Then("I click on the sidebar", () => {
     cy.get("#react-burger-menu-btn").click();
-    cy.get("#inventory_sidebar_link").should('be.visible');
-    cy.get("#about_sidebar_link").should('be.visible');
-    cy.get("#logout_sidebar_link").should('be.visible');
-    cy.get("#reset_sidebar_link").should('be.visible');
+    cy.get("#inventory_sidebar_link").should("be.visible");
+    cy.get("#about_sidebar_link").should("be.visible");
+    cy.get("#logout_sidebar_link").should("be.visible");
+    cy.get("#reset_sidebar_link").should("be.visible");
 });
 
 
   Then("I click on {string}", (name) => {
-    var b;
-    cy.get("#inventory_sidebar_link").should(($b) => {
-        b = $b.text();
-        expect(b).contains(name);
+    var button;
+    cy.get("#inventory_sidebar_link").should(($button) => {
+        button = $button.text();
+        expect(button).contains(name);
     });
     cy.get("#inventory_sidebar_link").click();
     
@@ -146,12 +145,11 @@ import {Then} from "cypress-cucumber-preprocessor/steps";
 
 
   Then("I check the button {string}", (name) => {
-    var c;
-    cy.get("#about_sidebar_link").should(($c) => {
-        c = $c.text();
-        expect(c).contains(name);
+    var button;
+    cy.get("#about_sidebar_link").should(($button) => {
+        button = $button.text();
+        expect(button).contains(name);
     });
-    var a;
     cy.get("#about_sidebar_link").each($a => {
         const message = $a.parent().parent().text();
         expect($a, message).to.not.have.attr("href", "#undefined");
@@ -159,41 +157,41 @@ import {Then} from "cypress-cucumber-preprocessor/steps";
 });
 
   Then("I click on {string} button to reset", (name) => {
-    var d;
-    cy.get("#reset_sidebar_link").should(($d) => {
-        d = $d.text();
-        expect(d).contains(name);
+    var reset;
+    cy.get("#reset_sidebar_link").should(($reset) => {
+        reset = $reset.text();
+        expect(reset).contains(name);
     });
     cy.get("#reset_sidebar_link").click({ force: true })
 }); 
 
   Then("I click on {string} to logout", (name) => {
-    var e;
-    cy.get("#logout_sidebar_link").should(($e) => {
-        e = $e.text();
-        expect(e).contains(name);
+    var logout;
+    cy.get("#logout_sidebar_link").should(($logout) => {
+        logout = $logout.text();
+        expect(logout).contains(name);
     });
     cy.get("#logout_sidebar_link").click();
 }); 
 
   Then("I should be on the login page", () => {
-    cy.url().should('include',"https://www.saucedemo.com")
-    cy.title().should('eq', 'Swag Labs');
+    cy.url().should("include","https://www.saucedemo.com")
+    cy.title().should("eq", "Swag Labs");
 }); 
 
   Then("I click on one product of the page", () => {
-    cy.get('#inventory_container > div > div:nth-child(1) > div.inventory_item_description > div.inventory_item_label > a').should('be.visible');
-    cy.get('#inventory_container > div > div:nth-child(1) > div.inventory_item_description > div.inventory_item_label > a').click();
+    cy.get("#inventory_container > div > div:nth-child(1) > div.inventory_item_description > div.inventory_item_label > a").should("be.visible");
+    cy.get("#inventory_container > div > div:nth-child(1) > div.inventory_item_description > div.inventory_item_label > a").click();
     
 });
 
   Then("I should go to the product page", () => {
-    cy.url().should('include',"https://www.saucedemo.com/inventory-item.html?id=")
+    cy.url().should("include","https://www.saucedemo.com/inventory-item.html?id=")
     cy.get("#back-to-products").should("be.visible");
-    var a;
-    cy.get("#back-to-products").should(($a) => {
-        a = $a.text();
-        expect(a).contains("Back to products");
+    var productPage;
+    cy.get("#back-to-products").should(($productPage) => {
+        productPage = $productPage.text();
+        expect(productPage).contains("Back to products");
     });
 
     cy.get(".inventory_details_name.large_size").should("be.visible");
@@ -205,20 +203,20 @@ import {Then} from "cypress-cucumber-preprocessor/steps";
     cy.get(".inventory_details_price").should("be.visible");
     cy.get(".inventory_details_price").should("not.be.empty");
     
-    cy.get('#add-to-cart-sauce-labs-backpack').should('have.length','1');
-    var t;
-    cy.get("#add-to-cart-sauce-labs-backpack").should(($t) => {
-        t = $t.text();
-        expect(t).contains("Add to cart");
+    cy.get("#add-to-cart-sauce-labs-backpack").should("have.length","1");
+    var text;
+    cy.get("#add-to-cart-sauce-labs-backpack").should(($text) => {
+        text = $text.text();
+        expect(text).contains("Add to cart");
     })
 });
 
   Then("I click on the {string} arrow", (name) => {
     cy.get("#back-to-products").should("be.visible");
-    var a;
-    cy.get("#back-to-products").should(($a) => {
-        a = $a.text();
-        expect(a).contains(name);
+    var arrow;
+    cy.get("#back-to-products").should(($arrow) => {
+        arrow = $arrow.text();
+        expect(arrow).contains(name);
     });
     cy.get("#back-to-products").click();
 });
@@ -230,25 +228,23 @@ import {Then} from "cypress-cucumber-preprocessor/steps";
 });
 
   Then("I click on each product page", () => {
-    cy.get('.inventory_item_name').should('have.length','6');
+    cy.get(".inventory_item_name").should("have.length","6");
     var genArr = Array.from({length:6},(v,k)=>k+1);
     cy.wrap(genArr).each((index) => {
     cy.get("#inventory_container > div > div:nth-child("+index+") > div.inventory_item_description > div.inventory_item_label > a > div")
-        .should('not.be.empty')
+        .should("not.be.empty")
     cy.get("#inventory_container > div > div:nth-child("+index+") > div.inventory_item_description > div.inventory_item_label > a > div").click()
-    cy.wait(500)
     cy.get("#back-to-products").click();
     })
 });
 
   Then("I check that all have of them have info", () => {
-    cy.get('.inventory_item_name').should('have.length','6');
+    cy.get(".inventory_item_name").should("have.length","6");
     var genArr = Array.from({length:6},(v,k)=>k+1);
     cy.wrap(genArr).each((index) => {
     cy.get("#inventory_container > div > div:nth-child("+index+") > div.inventory_item_description > div.inventory_item_label > a > div")
-        .should('not.be.empty')
+        .should("not.be.empty")
     cy.get("#inventory_container > div > div:nth-child("+index+") > div.inventory_item_description > div.inventory_item_label > a > div").click()
-    cy.wait(500)
 
     cy.get(".inventory_details_name.large_size").should("be.visible");
     cy.get(".inventory_details_name.large_size").should("not.be.empty");
