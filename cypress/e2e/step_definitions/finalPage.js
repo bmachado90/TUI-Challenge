@@ -1,4 +1,4 @@
-import {Given, When , Then} from "cypress-cucumber-preprocessor/steps";
+import {Then} from "cypress-cucumber-preprocessor/steps";
 
 
   Then("I can see the confirmation text", () => {

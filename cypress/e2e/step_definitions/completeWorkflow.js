@@ -1,4 +1,4 @@
-import {Given, When , Then} from "cypress-cucumber-preprocessor/steps";
+import {Then} from "cypress-cucumber-preprocessor/steps";
 
   Then("I select the most expensive and add it to the cart", () => {
     cy.get("#inventory_container > div > div:nth-child(1) > div.inventory_item_description > div.pricebar > button")

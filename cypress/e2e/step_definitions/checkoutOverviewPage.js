@@ -1,4 +1,4 @@
-import {Given, When , Then} from "cypress-cucumber-preprocessor/steps";
+import {Then} from "cypress-cucumber-preprocessor/steps";
 
   Then("I can see the {string}, {string}, {string} and {string}", (name ,name2,name3, name4) => {
     cy.get("#checkout_summary_container > div > div.summary_info > div:nth-child(1)").should("be.visible");
@@ -74,7 +74,7 @@ import {Given, When , Then} from "cypress-cucumber-preprocessor/steps";
 });
 
   Then("I should go to the Final Page", () => {
-    cy.url().should('include',"https://www.saucedemo.com/checkout-complete.html")
+    cy.url().should('include',"https://www.saucedemo.com/checkout-complete.html");
     cy.get("#header_container > div.header_secondary_container > span").should("be.visible");
     var a;
     cy.get("#header_container > div.header_secondary_container > span").should(($a) => {

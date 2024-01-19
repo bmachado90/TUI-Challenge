@@ -1,4 +1,4 @@
-import {Given, When , Then} from "cypress-cucumber-preprocessor/steps";
+import {Then} from "cypress-cucumber-preprocessor/steps";
 
 
   Then("I can see the form fields {string}, {string} and {string}", (fname,lname,zip) => {
@@ -72,7 +72,7 @@ import {Given, When , Then} from "cypress-cucumber-preprocessor/steps";
 });
 
   Then("I should be on the second page of the checkout", () => {
-    cy.url().should('include',"https://www.saucedemo.com/checkout-step-two.html")
+    cy.url().should('include',"https://www.saucedemo.com/checkout-step-two.html");
     cy.get("#header_container > div.header_secondary_container > span").should("be.visible");
     var a;
     cy.get("#header_container > div.header_secondary_container > span").should(($a) => {

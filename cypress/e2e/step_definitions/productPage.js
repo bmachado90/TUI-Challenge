@@ -1,4 +1,4 @@
-import {Given, When , Then} from "cypress-cucumber-preprocessor/steps";
+import {Then} from "cypress-cucumber-preprocessor/steps";
 
   Then("I can see several Products", () => {
     cy.get('.inventory_item').should('have.length','6');
@@ -9,7 +9,7 @@ import {Given, When , Then} from "cypress-cucumber-preprocessor/steps";
     var genArr = Array.from({length:6},(v,k)=>k+1);
     cy.wrap(genArr).each((index) => {
     cy.get("#inventory_container > div > div:nth-child("+index+") > div.inventory_item_description > div.inventory_item_label > a > div")
-        .should('not.be.empty')
+        .should('not.be.empty');
     })
 });
 
@@ -18,7 +18,7 @@ import {Given, When , Then} from "cypress-cucumber-preprocessor/steps";
     var genArr = Array.from({length:6},(v,k)=>k+1);
     cy.wrap(genArr).each((index) => {
     cy.get("#inventory_container > div > div:nth-child("+index+") > div.inventory_item_description > div.pricebar > div")
-        .should('not.be.empty')
+        .should('not.be.empty');
     })
 });
 
@@ -72,7 +72,7 @@ import {Given, When , Then} from "cypress-cucumber-preprocessor/steps";
     var t;
     cy.wrap(genArr).each((index) => {
     cy.get("#inventory_container > div > div:nth-child("+index+") > div.inventory_item_description > div.inventory_item_label > div")
-        .should('not.be.empty')
+        .should('not.be.empty');
     })
 });
 
@@ -97,7 +97,6 @@ import {Given, When , Then} from "cypress-cucumber-preprocessor/steps";
 });
 
   Then("And the product have {string} button", (name) => {
-    cy.wait(500)
     cy.get("#remove-sauce-labs-backpack").should("be.visible");
     var a;
     cy.get("#remove-sauce-labs-backpack").should(($a) => {
@@ -108,7 +107,6 @@ import {Given, When , Then} from "cypress-cucumber-preprocessor/steps";
 
   Then("I click on Remove button", (value) => {
     cy.get("#remove-sauce-labs-backpack").click();
-    cy.wait(500)
 });
 
   Then("The cart is empty", (value) => {
@@ -121,20 +119,18 @@ import {Given, When , Then} from "cypress-cucumber-preprocessor/steps";
 
   Then("I click on Remove button for the first product", () => {
     cy.get("#remove-sauce-labs-backpack").click();
-    cy.wait(500)
 });
 
   Then("I click on Remove button for the second product", () => {
     cy.get("#remove-sauce-labs-bike-light").click();
-    cy.wait(500)
 });
 
   Then("I click on the sidebar", () => {
     cy.get("#react-burger-menu-btn").click();
-    cy.get("#inventory_sidebar_link").should('be.visible')
-    cy.get("#about_sidebar_link").should('be.visible')
-    cy.get("#logout_sidebar_link").should('be.visible')
-    cy.get("#reset_sidebar_link").should('be.visible')
+    cy.get("#inventory_sidebar_link").should('be.visible');
+    cy.get("#about_sidebar_link").should('be.visible');
+    cy.get("#logout_sidebar_link").should('be.visible');
+    cy.get("#reset_sidebar_link").should('be.visible');
 });
 
 

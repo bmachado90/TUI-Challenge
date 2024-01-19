@@ -1,4 +1,4 @@
-import {Given, When , Then} from "cypress-cucumber-preprocessor/steps";
+import {Then} from "cypress-cucumber-preprocessor/steps";
 
   Then("I click on Shopping cart icon", () => {
     cy.get(".shopping_cart_link").should("be.visible");
@@ -6,7 +6,7 @@ import {Given, When , Then} from "cypress-cucumber-preprocessor/steps";
 });
 
   Then("I´m on the Shopping Cart Page", () => {
-    cy.url().should('include',"https://www.saucedemo.com/cart.html")
+    cy.url().should('include',"https://www.saucedemo.com/cart.html");
     cy.get("#header_container > div.header_secondary_container > span").should("be.visible");
     var a;
     cy.get("#header_container > div.header_secondary_container > span").should(($a) => {
@@ -22,13 +22,13 @@ import {Given, When , Then} from "cypress-cucumber-preprocessor/steps";
     cy.get(".cart_quantity").should('have.length','1');
     //prodcut name
     cy.get(".inventory_item_name")
-        .should('not.be.empty')
+        .should('not.be.empty');
     //product description
     cy.get("inventory_item_desc")
-        .should('not.be.empty')
+        .should('not.be.empty');
     //product price 
     cy.get(".inventory_item_price")
-        .should('not.be.empty')
+        .should('not.be.empty');
 });
 
 
